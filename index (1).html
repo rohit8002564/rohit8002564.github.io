@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rohit Kumar | Software Engineer Portfolio</title>
+<meta name="description" content="Rohit Kumar, Computer Science graduate building Python applications and machine learning projects. Based in Noida, Uttar Pradesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #F2F5F8;
+  --surface: #FFFFFF;
+  --fg: #0E1A2B;
+  --muted: #55657A;
+  --line: #D5DDE6;
+  --accent: #1D4ED8;
+  --accent-soft: #E3EBFC;
+  --term-bg: #0E1A2B;
+  --term-fg: #D8E2F0;
+  --term-dim: #7F93AD;
+  --term-ok: #6FD39A;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B121E; --surface: #121C2C; --fg: #E6ECF4; --muted: #94A4B8; --line: #25344A;
+    --accent: #7FA2FF; --accent-soft: #1A2A4A; --term-bg: #070C14; --term-fg: #D8E2F0; --term-dim: #6F839E; --term-ok: #6FD39A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B121E; --surface: #121C2C; --fg: #E6ECF4; --muted: #94A4B8; --line: #25344A;
+  --accent: #7FA2FF; --accent-soft: #1A2A4A; --term-bg: #070C14; --term-fg: #D8E2F0; --term-dim: #6F839E; --term-ok: #6FD39A;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.6; padding-inline: 20px; padding-block: 40px 64px; }
+.wrap { max-width: 860px; margin-inline: auto; display: flex; flex-direction: column; gap: 56px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.1; }
+p { margin: 0; }
+.label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+.hero { display: flex; flex-direction: column; gap: 20px; }
+.hero h1 { font-size: clamp(2.6rem, 9vw, 4.6rem); font-weight: 700; letter-spacing: -0.02em; }
+.role { font-family: var(--font-mono); font-size: 15px; color: var(--accent); }
+.lede { max-width: 60ch; font-size: 1.1rem; color: var(--fg); }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--fg); text-decoration: none; font-weight: 500; font-size: 14px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .btn.primary { color: #0B121E; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #0B121E; } }
+.btn:hover { border-color: var(--accent); }
+
+section { display: flex; flex-direction: column; gap: 24px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+.sec-head h2 { font-size: 1.6rem; font-weight: 700; }
+
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+.p-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline; }
+.project h3 { font-size: 1.5rem; font-weight: 700; }
+.tag { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.p-body { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 720px) { .p-body { grid-template-columns: 1.05fr 1fr; } }
+.p-body > * { min-width: 0; }
+.feat { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
+.feat li { padding-left: 18px; position: relative; }
+.feat li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 8px; height: 1px; background: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-family: var(--font-mono); font-size: 12px; padding: 3px 9px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
+.p-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 14px; font-weight: 500; }
+
+.term { background: var(--term-bg); color: var(--term-fg); border-radius: 8px; padding: 16px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+.term .dim { color: var(--term-dim); }
+.term .ok { color: var(--term-ok); }
+
+.pipe { display: flex; flex-direction: column; gap: 0; font-family: var(--font-mono); font-size: 13px; }
+.pipe div { padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
+.pipe span.arrow { text-align: center; color: var(--accent); padding: 2px 0; line-height: 1.2; }
+.pipe small { display: block; color: var(--muted); font-size: 11.5px; }
+
+.entry { display: grid; grid-template-columns: 1fr; gap: 6px 24px; }
+@media (min-width: 720px) { .entry { grid-template-columns: 180px 1fr; } }
+.entry > * { min-width: 0; }
+.entry h3 { font-size: 1.2rem; }
+.entry .org { color: var(--accent); font-weight: 500; }
+
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px 32px; }
+.skills dl { margin: 0; }
+.skills dt { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.skills dd { margin: 0; font-size: 15px; }
+
+.edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.edu > div { border-top: 2px solid var(--fg); padding-top: 10px; display: flex; flex-direction: column; gap: 2px; font-size: 15px; }
+.edu b { font-family: var(--font-display); font-size: 1.05rem; }
+.edu .m { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+
+.contact { display: flex; flex-direction: column; gap: 14px; }
+.copy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.copy-row code { font-family: var(--font-mono); font-size: 15px; user-select: all; overflow-wrap: anywhere; }
+.copy-row button { font: inherit; font-size: 13px; padding: 4px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+.foot { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .btn { transition: border-color .15s; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="label">Portfolio · Noida, Uttar Pradesh</p>
+  <h1>Rohit Kumar</h1>
+  <p class="role">Software Engineer · Python · C++</p>
+  <p class="lede">Computer Science graduate who builds Python applications and machine learning projects. I like clear problem-solving and quality software, and I am looking to grow in software testing and test automation.</p>
+  <div class="links">
+    <a class="btn primary" href="https://github.com/rohit8002564">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/rohit-kumar-478687246">LinkedIn</a>
+    <a class="btn" href="#contact">Contact</a>
+  </div>
+</header>
+
+<section id="work">
+  <div class="sec-head"><h2>Selected work</h2><span class="label">3 projects</span></div>
+
+  <article class="project">
+    <div class="p-top">
+      <h3>Binance Futures Trading Bot</h3>
+      <span class="tag">Python CLI · Binance Futures Testnet (USDT-M)</span>
+    </div>
+    <div class="p-body">
+      <div>
+        <p>A command-line bot that places MARKET and LIMIT orders on the Binance Futures Testnet. Input is validated before anything is sent, and every request and response is logged.</p>
+        <ul class="feat">
+          <li>BUY and SELL sides, with validation of side, type, quantity and price</li>
+          <li>Separate modules for the API client, order logic, validators and logging</li>
+          <li>Exception handling for both API errors and bad input</li>
+        </ul>
+      </div>
+      <div class="term" role="img" aria-label="Example command and order response"><span class="dim">$</span> python cli.py --symbol BTCUSDT \
+    --side BUY --type MARKET --quantity 0.001
+
+<span class="dim">===== ORDER RESPONSE =====</span>
+Order ID: 123456789
+Status: NEW
+<span class="ok">Order placed successfully!</span></div>
+    </div>
+    <div class="chips"><span class="chip">Python</span><span class="chip">python-binance</span><span class="chip">python-dotenv</span><span class="chip">Logging</span></div>
+    <div class="p-links"><a href="https://github.com/rohit8002564/trading-bot">View on GitHub</a></div>
+  </article>
+
+  <article class="project">
+    <div class="p-top">
+      <h3>Academic Progress Hub</h3>
+      <span class="tag">Final year project · team of 4</span>
+    </div>
+    <div class="p-body">
+      <div>
+        <p>A role-based timetable management web app for students, faculty and admins. Submitted as the final project for Software Tools Laboratory (PCCCS492).</p>
+        <ul class="feat">
+          <li>Secure login with a personalized dashboard for each role</li>
+          <li>Personalized timetable views and daily class notifications</li>
+          <li>Admin dashboard for managing schedules</li>
+        </ul>
+      </div>
+      <div>
+        <p class="label" style="margin-bottom:10px">Roles in the system</p>
+        <div class="pipe">
+          <div>Student<small>own timetable, class alerts</small></div>
+          <div style="margin-top:8px">Faculty<small>personal schedule view</small></div>
+          <div style="margin-top:8px">Admin<small>schedule management</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="chips"><span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">SQLite</span><span class="chip">Pandas</span></div>
+    <div class="p-links"><a href="https://github.com/rohit8002564/ACADEMIC-PROGRESS-HUB">View on GitHub</a></div>
+  </article>
+
+  <article class="project">
+    <div class="p-top">
+      <h3>Intent-Based NLP Chatbot</h3>
+      <span class="tag">Built during ML internship · Dec 2024 – Jan 2025</span>
+    </div>
+    <div class="p-body">
+      <div>
+        <p>A text chatbot that works out what the user wants and replies to match. Built with mentorship during the Shell-Edunet Skills4Future AICTE internship and deployed on Streamlit.</p>
+        <ul class="feat">
+          <li>TF-IDF turns user text into features</li>
+          <li>Logistic Regression classifies the intent</li>
+          <li>Streamlit interface for chatting with the bot</li>
+        </ul>
+      </div>
+      <div class="pipe" aria-label="Chatbot pipeline">
+        <div>User message</div><span class="arrow">↓</span>
+        <div>TF-IDF<small>text feature extraction</small></div><span class="arrow">↓</span>
+        <div>Logistic Regression<small>intent classification</small></div><span class="arrow">↓</span>
+        <div>Response<small>matched to predicted intent</small></div>
+      </div>
+    </div>
+    <div class="chips"><span class="chip">Python</span><span class="chip">Scikit-learn</span><span class="chip">TF-IDF</span><span class="chip">Streamlit</span></div>
+    <div class="p-links"><a href="https://github.com/rohit8002564">More on GitHub</a></div>
+  </article>
+</section>
+
+<section id="experience">
+  <div class="sec-head"><h2>Experience</h2></div>
+  <div class="entry">
+    <p class="label">Dec 2024 – Jan 2025</p>
+    <div>
+      <h3>Machine Learning Intern</h3>
+      <p class="org">Shell–Edunet Skills4Future AICTE Internship</p>
+      <ul class="feat">
+        <li>Completed a 4-week internship focused on Green Skills using AI technologies</li>
+        <li>Developed a text-based AI chatbot with Streamlit for user interaction</li>
+        <li>Implemented NLP techniques using TF-IDF and Logistic Regression for intent classification</li>
+        <li>Deployed the project on Streamlit under mentorship guidance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-head"><h2>Skills</h2></div>
+  <div class="skills">
+    <dl><dt>Languages</dt><dd>Python, C++, C</dd></dl>
+    <dl><dt>Database</dt><dd>SQL, SQLite</dd></dl>
+    <dl><dt>Development</dt><dd>FastAPI, REST APIs, Streamlit</dd></dl>
+    <dl><dt>Libraries</dt><dd>Pandas, NumPy, Scikit-learn</dd></dl>
+    <dl><dt>Tools</dt><dd>Git, GitHub, VS Code</dd></dl>
+  </div>
+</section>
+
+<section id="background">
+  <div class="sec-head"><h2>Education and certifications</h2></div>
+  <div class="edu">
+    <div>
+      <b>B.Tech, Computer Science and Engineering</b>
+      <span>Sitamarhi Institute of Technology, Bihar Engineering University, Patna</span>
+      <span class="m">2021 – 2025 · CGPA 7.41 / 10</span>
+    </div>
+    <div>
+      <b>Oracle Cloud Infrastructure AI Foundations Associate</b>
+      <span class="m">2025</span>
+    </div>
+    <div>
+      <b>Cisco Certified Network Associate (CCNA)</b>
+      <span class="m">CCNAv7</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="sec-head"><h2>Contact</h2><span class="label">English · Hindi</span></div>
+  <div class="copy-row">
+    <code id="email">rk524282@gmail.com</code>
+    <button type="button" id="copy-btn">Copy email</button>
+  </div>
+  <div class="links">
+    <a class="btn" href="https://www.linkedin.com/in/rohit-kumar-478687246">linkedin.com/in/rohit-kumar-478687246</a>
+    <a class="btn" href="https://github.com/rohit8002564">github.com/rohit8002564</a>
+  </div>
+  <p class="foot">Based in Noida, Uttar Pradesh</p>
+</section>
+
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-btn');
+  var code = document.getElementById('email');
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(code);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected';
+    };
+    try {
+      navigator.clipboard.writeText(code.textContent).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
